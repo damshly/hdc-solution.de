@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function AboutHero() {
   return (
     <section className="relative bg-slate-900 text-white pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* النص والزر */}
+          {/* Text & Button */}
           <div className="space-y-6 text-center lg:text-left">
             <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight">
               Sauberkeit, die Vertrauen schafft.
@@ -23,12 +24,15 @@ export function AboutHero() {
             </div>
           </div>
 
-          {/* الصورة الجانبية */}
+          {/* Side Image */}
           <div className="relative h-72 sm:h-96 w-full rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-800">
-            <img
+            <Image
               src="/images/about-team.jpeg"
               alt="HDC Cleaning Solution"
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+              className="object-cover"
             />
           </div>
         </div>

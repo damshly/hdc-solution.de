@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SITE_INFO } from "@/constants/site";
 
 export default function Services() {
@@ -7,14 +8,14 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-sky-600 font-semibold text-sm tracking-wide uppercase">
+          <span className="text-sky-600 font-semibold text-sm tracking-widest uppercase">
             Gebäudedienstleistung
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
-            Unsere Dienstleistungen
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">
+            Unsere Kernkompetenzen
           </h2>
-          <p className="text-slate-600 leading-relaxed">
-            Professionelle Dienstleistungen für Ihr Gebäude in Schweinfurt & Umgebung.
+          <p className="text-slate-600 leading-relaxed text-base">
+            Professionelle, zuverlässige und flexible Dienstleistungen für Firmen-, Gewerbe- und Privatobjekte in Schweinfurt & Umgebung.
           </p>
         </div>
 
@@ -25,15 +26,14 @@ export default function Services() {
               key={service.id}
               className="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
             >
-              {/* حاوية الصورة بجهة أبعاد 4/3 ومحاذاة أعلى اليسار */}
+              {/* Image Container */}
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                 <Image
-                  src={`/images/service-${index + 1}.jpeg`}
+                  src={service.image || `/images/service-${index + 1}.jpeg`}
                   alt={service.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover object-[left_top] group-hover:scale-105 transition-transform duration-500"
-                />
+                  className="object-cover object-[left_top] group-hover:scale-105 transition-transform duration-500" />
 
                 <span className="absolute top-3 right-3 z-10 bg-slate-900/85 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
                   {service.tag}
@@ -51,28 +51,44 @@ export default function Services() {
                   </p>
                 </div>
 
-                <a
-                  href={`tel:${SITE_INFO.phone}`}
-                  className="w-full bg-slate-100 hover:bg-sky-600 hover:text-white text-slate-800 font-semibold py-2.5 rounded-xl text-sm transition-colors duration-200 flex items-center justify-center gap-2 group/btn"
-                >
-                  <span>Mehr erfahren</span>
-                  <svg
-                    className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                <div className="flex flex-col gap-2 pt-2 border-t border-slate-100">
+                  <Link
+                    href={`/leistungen/${service.id}`}
+                    className="w-full bg-slate-900 hover:bg-sky-600 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors duration-200 flex items-center justify-center gap-2 group/btn"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </a>
+                    <span>Details ansehen</span>
+                    <svg
+                      className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
-          ))}        </div>
+          ))}
+        </div>
+
+        {/* View All Services Link */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/leistungen"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 hover:text-sky-700 hover:underline"
+          >
+            <span>Alle Leistungen und Leistungsbereiche im Detail ansehen</span>
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
+        </div>
       </div>
     </section>
   );

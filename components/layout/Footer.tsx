@@ -13,7 +13,7 @@ export default function Footer() {
               <span className="font-bold text-white text-base">Gebäudedienstleistungen</span>
             </div>
             <p className="text-slate-400 text-xs leading-relaxed mb-6">
-              Ihr kompetenter Partner für professionelle Gebäudereinigung und Pflgedienstleistungen in Schweinfurt & Umgebung.
+              Ihr kompetenter Partner für professionelle Gebäudereinigung und Pflegedienstleistungen in Schweinfurt &amp; Umgebung.
             </p>
             <div className="text-xs text-slate-500">
               {SITE_INFO.workingHours}
@@ -26,9 +26,9 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {SITE_INFO.navLinks.map((item) => (
                 <li key={item.name}>
-                  <a href={item.href} className="hover:text-sky-400 transition-colors">
+                  <Link href={item.href} className="hover:text-sky-400 transition-colors">
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -51,7 +51,13 @@ export default function Footer() {
               <p className="flex items-center gap-2">
                 <span className="text-sky-400">Telefon:</span>
                 <a href={`tel:${SITE_INFO.phone}`} className="text-white hover:text-sky-300 font-semibold">
-                  {SITE_INFO.phone}
+                  {SITE_INFO.phoneFormatted || SITE_INFO.phone}
+                </a>
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="text-sky-400">E-Mail:</span>
+                <a href={`mailto:${SITE_INFO.email}`} className="text-slate-300 hover:text-sky-300">
+                  {SITE_INFO.email}
                 </a>
               </p>
               <p className="flex items-center gap-2">
@@ -65,7 +71,7 @@ export default function Footer() {
         {/* Bottom copyright */}
         <div className="mt-12 pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} HDC Gebäudedienstleistungen. Alle Rechte vorbehalten.</p>
-          <p>Designed with Next.js & Tailwind CSS</p>
+          <p>Schweinfurt &amp; Region</p>
         </div>
       </div>
     </footer>

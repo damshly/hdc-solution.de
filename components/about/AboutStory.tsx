@@ -13,13 +13,13 @@ export function AboutStory() {
 
         <div className="text-slate-600 text-sm sm:text-base leading-relaxed space-y-4">
           <p>
-            Willkommen bei HDC Dienstleistungen! Zuverlässigkeit steht bei uns an erster Stelle. Wenn Sie Ihr Gebäude und Ihre Außenanlagen in besten Händen wissen möchten – Sorgfalt und saubere Ausführung stehen bei uns sowohl bei regelmäßigen Pflichten (Betreuung, Wartung sowie 24/7 Winterdienst) als auch bei Sonderarbeiten an oberster Stelle.
+            Willkommen bei HDC Gebäudedienstleistungen! Zuverlässigkeit und höchste Gründlichkeit stehen bei uns an erster Stelle. Wenn Sie Ihre Immobilien, Gewerbeflächen und Außenanlagen in besten Händen wissen möchten, sind wir Ihr verlässlicher Ansprechpartner in Schweinfurt und Umgebung – von der regelmäßigen Unterhaltsreinigung über den 24/7 Winterdienst bis hin zur anspruchsvollen Außenpflege.
           </p>
           <p>
-            Die Grundlage unseres Handelns. Mit unserem engagierten Team, modernen Arbeitsmitteln und einer umweltbewussten Arbeitsweise erfüllen wir höchste Ansprüche an Dienstleistungen rund um Ihr Gebäude. Die Gebäudereinigung, Winterdienst oder Garten- und Außenanlagenpflege – für ein optisch makelloses und funktionales Wunschergebnis arbeiten wir Hand in Hand mit unseren Kunden zusammen.
+            Mit unserem engagierten, geschulten Team, modernem Equipment und einer umweltbewussten Arbeitsweise erfüllen wir höchste Qualitätsansprüche. Ob Büroreinigung, Notfall-Winterdienst oder fachgerechte Gartenpflege: Für ein makelloses und werterhaltendes Ergebnis arbeiten wir stets transparent und Hand in Hand mit unseren Kunden zusammen.
           </p>
           <p>
-            Ihr Gebäude verdient den besten Service. Unser vielseitiges Dienstleistungsangebot (Winterdienst und Gartenpflege) auf höchstem Niveau garantiert maßgeschneiderte Lösungen. Durch Qualität, Sorgfalt und Flexibilität schaffen wir nachhaltige Werte für Eigentümer, Verwalter und Nutzer. Ihre Zufriedenheit ist unser täglicher Ansporn – jeden Tag aufs Neue.
+            Ihre Immobilie verdient den besten Service. Durch Sorgfalt, Termintreue und maximale Flexibilität schaffen wir nachhaltige Werte für Eigentümer, Hausverwaltungen und Mieter. Ihre Zufriedenheit ist unser täglicher Ansporn – Tag für Tag.
           </p>
         </div>
       </div>

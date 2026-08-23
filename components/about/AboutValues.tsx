@@ -1,7 +1,7 @@
 const values = [
   {
     title: "Zuverlässigkeit",
-    desc: "Wir halten Termine ein und liefern stets eine beständige Ergebnisse.",
+    desc: "Wir halten Termine ein und liefern stets beständige Ergebnisse.",
     icon: (
       <svg className="w-6 h-6 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 0a1.5 1.5 0 00-3 0v2.5m3-2.5a1.5 1.5 0 013 0m0 0v9a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 003 0V11a1.5 1.5 0 00-3 0" />
