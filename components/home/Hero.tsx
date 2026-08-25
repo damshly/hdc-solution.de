@@ -22,7 +22,7 @@ export default function Hero() {
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-400/20 rounded-full px-4 py-1.5 text-sky-300 text-xs font-semibold mb-6 backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span>
-            <span>Ihr zuverlässiger Partner in Schweinfurt & Umgebung</span>
+            <span>Ihr zuverlässiger Partner in Schweinfurt && Umgebung</span>
           </div>
 
           {/* Main Heading */}
