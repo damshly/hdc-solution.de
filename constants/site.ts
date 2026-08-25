@@ -18,6 +18,7 @@ export interface ServiceItem {
   }[];
 }
 
+
 export const SITE_INFO = {
   name: "HDC Gebäudedienstleistungen",
   city: "Schweinfurt",
