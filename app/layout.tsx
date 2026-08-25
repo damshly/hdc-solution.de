@@ -3,6 +3,7 @@ import { SITE_INFO } from '@/constants/site';
 import Navbar from '@/components/layout/navbar/index';
 import Footer from '@/components/layout/Footer';
 import FloatingWhatsApp from '@/components/layout/FloatingWhatsApp';
+import CookieBanner from '@/components/layout/CookieBanner';
 import './globals.css';
 
 export const viewport: Viewport = {
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Footer />
         <FloatingWhatsApp />
+        <CookieBanner />
       </body>
     </html>
   );

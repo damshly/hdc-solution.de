@@ -1,3 +1,6 @@
 allowBuilds:
+  '@damshly/next-php-mailer': false
   sharp: false
   unrs-resolver: false
+minimumReleaseAgeExclude:
+  - '@damshly/next-php-mailer@1.0.0'

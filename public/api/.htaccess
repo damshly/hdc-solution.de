@@ -1,0 +1,22 @@
+# Apache Configuration for next-php-mailer
+# Protect sensitive files and directories
+
+# Disable directory browsing
+Options -Indexes
+
+# Protect .env, config.php, composer, and hidden files
+<FilesMatch "^\.env|config\.php|composer\.(json|lock)">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Block direct access to internal library files
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^lib/ - [F,L]
+</IfModule>
