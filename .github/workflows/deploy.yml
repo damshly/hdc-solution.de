@@ -6,7 +6,6 @@ on:
       - main
       - dev
 
-
 jobs:
   web-deploy:
     name: Build and Deploy
@@ -26,7 +25,7 @@ jobs:
           version: 9
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --no-frozen-lockfile --ignore-workspace
 
       - name: Build static site
         run: pnpm build
