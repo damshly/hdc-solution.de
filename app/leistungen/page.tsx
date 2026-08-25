@@ -32,7 +32,7 @@ export default function ServicesPage() {
               className="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
             >
               {/* Image & Tag */}
-              <div className="relative h-52 w-full overflow-hidden bg-slate-100">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                 <Image
                   src={service.image}
                   alt={service.title}
