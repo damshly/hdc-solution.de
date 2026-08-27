@@ -52,19 +52,19 @@ export default function CtaBanner() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 pt-10 border-t border-slate-800 text-center">
             <div>
               <div className="text-2xl font-bold text-sky-400">100%</div>
-              <div className="text-xs text-slate-400 mt-1">Zuverlässigkeit</div>
+              <div className="text-xs text-slate-300 mt-1">Zuverlässigkeit</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-sky-400">24/7</div>
-              <div className="text-xs text-slate-400 mt-1">Notdienst erreichbar</div>
+              <div className="text-xs text-slate-300 mt-1">Notdienst erreichbar</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-sky-400">0 €</div>
-              <div className="text-xs text-slate-400 mt-1">Kostenlose Besichtigung</div>
+              <div className="text-xs text-slate-300 mt-1">Kostenlose Besichtigung</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-sky-400">Regional</div>
-              <div className="text-xs text-slate-400 mt-1">Schweinfurt & Umland</div>
+              <div className="text-xs text-slate-300 mt-1">Schweinfurt & Umland</div>
             </div>
           </div>
         </div>

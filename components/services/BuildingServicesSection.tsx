@@ -24,8 +24,8 @@ export function BuildingServicesSection() {
             </div>
 
             <div>
-              <h4 className="font-bold text-slate-900 text-sm mb-2">Unsere Reinigungsleistungen</h4>
-              <ul className="space-y-2 text-sm text-slate-600">
+              <h3 className="font-bold text-slate-900 text-sm mb-2">Unsere Reinigungsleistungen</h3>
+              <ul className="space-y-2 text-sm text-slate-700">
                 {service.features.map((item, idx) => (
                   <li key={idx} className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-sky-600"></span>
@@ -42,13 +42,14 @@ export function BuildingServicesSection() {
               src={service.image}
               alt={`${service.title} HDC Schweinfurt`}
               fill
+              sizes="(max-width: 1024px) 100vw, 33vw"
               className="object-cover"
             />
           </div>
 
           {/* العمود الثالث: نطاقات العمل (Einsatzbereiche) */}
           <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-            <h3 className="text-lg font-bold text-sky-600 mb-4">Einsatzbereiche</h3>
+            <h3 className="text-lg font-bold text-sky-700 mb-4">Einsatzbereiche</h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 text-sm text-slate-700">
               {service.areas?.map((item, idx) => (
                 <li key={idx} className="flex items-center gap-2">

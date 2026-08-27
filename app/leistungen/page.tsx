@@ -12,13 +12,13 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-slate-50 pt-28 pb-16">
       {/* Header Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-        <span className="text-sky-600 font-semibold text-sm tracking-widest uppercase">
+        <span className="text-sky-700 font-bold text-sm tracking-widest uppercase">
           Übersicht
         </span>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
           Unsere Dienstleistungen
         </h1>
-        <p className="text-slate-600 max-w-2xl mx-auto mt-3 text-base sm:text-lg">
+        <p className="text-slate-700 max-w-2xl mx-auto mt-3 text-base sm:text-lg">
           Wir bieten Ihnen maßgeschneiderte Lösungen für Sauberkeit, Pflege und Sicherheit Rund um Ihr Gebäude.
         </p>
       </section>
@@ -37,6 +37,7 @@ export default function ServicesPage() {
                   src={service.image}
                   alt={service.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <span className="absolute top-4 right-4 bg-sky-600/90 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
@@ -47,10 +48,10 @@ export default function ServicesPage() {
               {/* Content */}
               <div className="p-6 flex flex-col flex-grow justify-between space-y-4">
                 <div>
-                  <h2 className="text-xl font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
+                  <h2 className="text-xl font-bold text-slate-900 group-hover:text-sky-700 transition-colors">
                     {service.title}
                   </h2>
-                  <p className="text-slate-600 text-sm mt-2 leading-relaxed">
+                  <p className="text-slate-700 text-sm mt-2 leading-relaxed">
                     {service.description}
                   </p>
                 </div>
