@@ -25,7 +25,7 @@ export default function Services() {
             <div
               key={service.id}
               className="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
-            >
+            > 
               {/* Image Container */}
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                 <Image

@@ -3,8 +3,8 @@ import Link from "next/link";
 import { SITE_INFO } from "@/constants/site";
 
 export const metadata: Metadata = {
-  title: "Impressum | HDC Gebäudedienstleistungen",
-  description: "Gesetzliche Anbieterkennzeichnung und rechtliche Hinweise von HDC Gebäudedienstleistungen in Schweinfurt.",
+  title: `Impressum | ${SITE_INFO.name}`,
+  description: `Gesetzliche Anbieterkennzeichnung und rechtliche Hinweise von ${SITE_INFO.name}.`,
   robots: {
     index: false,
     follow: true,
@@ -30,14 +30,18 @@ export default function ImpressumPage() {
 
         {/* Content Box */}
         <div className="bg-white rounded-2xl border border-slate-200/80 p-8 sm:p-12 shadow-sm space-y-8 text-slate-700 text-sm sm:text-base leading-relaxed">
-          {/* Angaben */}
+          {/* Angaben zum Unternehmen */}
           <section className="space-y-2">
             <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-2">
               Angaben zum Unternehmen
             </h2>
-            <p className="font-semibold text-slate-900">{SITE_INFO.name}</p>
-            <p>Inhaber / Geschäftsführung: HDC Gebäudedienstleistungen</p>
-            <p>Einsatzgebiet: {SITE_INFO.fullAddress}</p>
+            <p className="font-bold text-slate-900 text-lg">{SITE_INFO.name}</p>
+            <p className="font-semibold text-slate-800">Inhaber: {SITE_INFO.owner}</p>
+            <p className="text-slate-600">
+              {SITE_INFO.street}<br />
+              {SITE_INFO.zip} {SITE_INFO.city}<br />
+              {SITE_INFO.country}
+            </p>
           </section>
 
           {/* Kontakt */}
@@ -48,7 +52,7 @@ export default function ImpressumPage() {
             <p>
               <span className="font-medium text-slate-900">Telefon: </span>
               <a href={`tel:${SITE_INFO.phone}`} className="text-sky-600 hover:underline">
-                {SITE_INFO.phoneFormatted || SITE_INFO.phone}
+                {SITE_INFO.phoneFormatted}
               </a>
             </p>
             <p>
@@ -57,77 +61,33 @@ export default function ImpressumPage() {
                 {SITE_INFO.email}
               </a>
             </p>
+          </section>
+
+          {/* Umsatzsteuer-ID */}
+          <section className="space-y-2">
+            <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-2">
+              Umsatzsteuer-ID
+            </h2>
             <p>
-              <span className="font-medium text-slate-900">Website: </span>
-              <a href={SITE_INFO.url} className="text-sky-600 hover:underline">
-                {SITE_INFO.url}
-              </a>
+              <span className="font-medium text-slate-900">Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: </span>
+              <span className="font-semibold text-slate-800">{SITE_INFO.taxId}</span>
             </p>
           </section>
 
-          {/* Verantwortlich für den Inhalt */}
+          {/* Verbraucherstreitbeilegung */}
           <section className="space-y-2">
             <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-2">
-              Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
-            </h2>
-            <p>{SITE_INFO.name}</p>
-            <p>{SITE_INFO.address}</p>
-          </section>
-
-          {/* EU-Streitschlichtung */}
-          <section className="space-y-2">
-            <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-2">
-              EU-Streitschlichtung
+              Verbraucherstreitbeilegung / Universalschlichtungsstelle
             </h2>
             <p>
-              Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-              <a
-                href="https://ec.europa.eu/consumers/odr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sky-600 hover:underline break-all"
-              >
-                https://ec.europa.eu/consumers/odr
-              </a>
-              .
-            </p>
-            <p>
-              Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+              Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
             </p>
           </section>
 
-          {/* Haftung für Inhalte */}
-          <section className="space-y-2">
-            <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-2">
-              Haftung für Inhalte
-            </h2>
-            <p>
-              Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-            </p>
-            <p>
-              Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-            </p>
-          </section>
-
-          {/* Haftung für Links */}
-          <section className="space-y-2">
-            <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-2">
-              Haftung für Links
-            </h2>
-            <p>
-              Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
-            </p>
-          </section>
-
-          {/* Urheberrecht */}
-          <section className="space-y-2">
-            <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-2">
-              Urheberrecht
-            </h2>
-            <p>
-              Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
-            </p>
-          </section>
+          {/* Stand */}
+          <div className="pt-4 border-t border-slate-100 text-slate-400 text-xs">
+            Stand: 27.08.2026, 10:45:40
+          </div>
         </div>
 
         {/* Back Link */}
@@ -143,3 +103,5 @@ export default function ImpressumPage() {
     </main>
   );
 }
+
+

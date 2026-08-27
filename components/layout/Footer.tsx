@@ -40,7 +40,6 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li><Link href="/impressum" className="hover:text-sky-400 transition-colors">Impressum</Link></li>
               <li><Link href="/datenschutz" className="hover:text-sky-400 transition-colors">Datenschutz</Link></li>
-              <li><Link href="/agb" className="hover:text-sky-400 transition-colors">AGB</Link></li>
             </ul>
           </div>
 
