@@ -11,6 +11,7 @@ export default function Hero() {
           alt="HDC Team"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/40 to-transparent"></div>

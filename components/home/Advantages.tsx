@@ -27,11 +27,11 @@ export default function Advantages() {
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Left Text */}
           <div className="lg:col-span-5">
-            <span className="text-sky-600 font-semibold text-sm tracking-widest uppercase">Warum HDC?</span>
+            <span className="text-sky-700 font-bold text-sm tracking-widest uppercase">Warum HDC?</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-6 leading-tight">
               Ihre Vorteile bei HDC auf einen Blick
             </h2>
-            <p className="text-slate-600 leading-relaxed mb-8 text-base">
+            <p className="text-slate-700 leading-relaxed mb-8 text-base">
               Unsere Kunden vertrauen auf unsere Präzision, Zuverlässigkeit und lückenlosen Service.
               Wir garantieren Ihnen höchste Maßstäbe für Sauberkeit, Werterhalt und Objektpflege in Schweinfurt und Umgebung.
             </p>
@@ -62,17 +62,17 @@ export default function Advantages() {
                 className="p-7 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-sky-300 hover:bg-sky-50/40 hover:shadow-md transition-all duration-300 group"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-600 flex items-center justify-center group-hover:bg-sky-500 group-hover:text-white transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-700 flex items-center justify-center group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300">
                     {advantageIcons[idx] || (
                       <span className="font-bold text-lg">0{idx + 1}</span>
                     )}
                   </div>
-                  <span className="text-xs font-bold text-slate-400">0{idx + 1}</span>
+                  <span className="text-xs font-bold text-slate-600">0{idx + 1}</span>
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-sky-700 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-slate-700 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

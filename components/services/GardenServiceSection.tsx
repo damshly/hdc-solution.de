@@ -26,9 +26,9 @@ export function GardenServiceSection() {
             </div>
 
             <div>
-              <h4 className="font-bold text-slate-900 text-sm mb-3">
+              <h3 className="font-bold text-slate-900 text-sm mb-3">
                 Ihre Vorteile bei HDC
-              </h4>
+              </h3>
               <ul className="space-y-2 text-sm text-slate-700">
                 {service.benefits.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
@@ -46,6 +46,7 @@ export function GardenServiceSection() {
               src={service.image}
               alt={`${service.title} HDC Schweinfurt`}
               fill
+              sizes="(max-width: 1024px) 100vw, 33vw"
               className="object-cover"
             />
           </div>
@@ -57,10 +58,10 @@ export function GardenServiceSection() {
                 key={gIdx}
                 className={gIdx > 0 ? "border-t border-slate-200 pt-3" : ""}
               >
-                <h4 className="font-bold text-sky-600 text-sm mb-2">
+                <h3 className="font-bold text-sky-700 text-sm mb-2">
                   {group.title}:
-                </h4>
-                <ul className="space-y-1 text-sm text-slate-600">
+                </h3>
+                <ul className="space-y-1 text-sm text-slate-700">
                   {group.items.map((item, iIdx) => (
                     <li key={iIdx}>• {item}</li>
                   ))}

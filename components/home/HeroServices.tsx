@@ -8,13 +8,13 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-sky-600 font-semibold text-sm tracking-widest uppercase">
+          <span className="text-sky-700 font-bold text-sm tracking-widest uppercase">
             Gebäudedienstleistung
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">
             Unsere Kernkompetenzen
           </h2>
-          <p className="text-slate-600 leading-relaxed text-base">
+          <p className="text-slate-700 leading-relaxed text-base">
             Professionelle, zuverlässige und flexible Dienstleistungen für Firmen-, Gewerbe- und Privatobjekte in Schweinfurt & Umgebung.
           </p>
         </div>

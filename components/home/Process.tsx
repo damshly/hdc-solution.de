@@ -66,7 +66,7 @@ export default function Process() {
                   <div className="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center group-hover:scale-110 group-hover:bg-sky-500 group-hover:text-white transition-all duration-300">
                     {item.icon}
                   </div>
-                  <span className="text-3xl font-extrabold text-slate-600 group-hover:text-sky-400 transition-colors">
+                  <span className="text-3xl font-extrabold text-slate-400 group-hover:text-sky-400 transition-colors">
                     {item.step}
                   </span>
                 </div>
@@ -99,7 +99,7 @@ export default function Process() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </Link>
-          <span className="block mt-3 text-xs text-slate-400">
+          <span className="block mt-3 text-xs text-slate-300">
             Oder direkt anrufen: <a href={`tel:${SITE_INFO.phone}`} className="text-sky-400 hover:underline font-semibold">{SITE_INFO.phoneFormatted || SITE_INFO.phone}</a>
           </span>
         </div>

@@ -16,11 +16,11 @@ export default function Gallery() {
     <section id="galerie" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-sky-600 font-semibold text-sm tracking-widest uppercase">Impressionen</span>
+          <span className="text-sky-700 font-bold text-sm tracking-widest uppercase">Impressionen</span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">
             Das sind wir bei HDC
           </h2>
-          <p className="text-slate-600 text-base leading-relaxed">
+          <p className="text-slate-700 text-base leading-relaxed">
             Bilder sagen mehr als tausend Worte – hier finden Sie Einblicke in unsere tägliche Qualitätsarbeit vor Ort in Schweinfurt & Region.
           </p>
         </div>

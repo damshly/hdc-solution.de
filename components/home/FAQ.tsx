@@ -16,13 +16,13 @@ export default function FAQ() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-sky-600 font-semibold text-sm tracking-widest uppercase">
+          <span className="text-sky-700 font-bold text-sm tracking-widest uppercase">
             Häufige Fragen
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">
             Fragen & Antworten zu unserem Service
           </h2>
-          <p className="text-slate-600 text-base">
+          <p className="text-slate-700 text-base">
             Hier finden Sie Antworten auf die wichtigsten Fragen. Haben Sie weitere Fragen? Wir beraten Sie gerne persönlich.
           </p>
         </div>

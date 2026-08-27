@@ -78,7 +78,7 @@ export default function CookieBanner() {
               >
                 Wir verwenden Cookies
               </h2>
-              <p className="text-sky-600 text-xs font-medium mt-0.5">
+              <p className="text-sky-700 text-xs font-semibold mt-0.5">
                 DSGVO-konform · Datenschutz
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function CookieBanner() {
           {/* Description */}
           <p
             id="cookie-banner-desc"
-            className="text-slate-600 text-sm leading-relaxed"
+            className="text-slate-700 text-sm leading-relaxed"
           >
             Diese Website verwendet Cookies, um Ihnen die bestmögliche Erfahrung
             zu bieten. Einige sind technisch notwendig, andere helfen uns, die
@@ -95,11 +95,11 @@ export default function CookieBanner() {
           </p>
 
           {/* Privacy link */}
-          <div className="text-xs text-slate-400">
+          <div className="text-xs text-slate-600">
             Mehr erfahren in unserer{" "}
             <Link
               href="/datenschutz"
-              className="text-sky-600 hover:text-sky-700 font-semibold underline underline-offset-2 transition-colors"
+              className="text-sky-700 hover:text-sky-800 font-semibold underline underline-offset-2 transition-colors"
             >
               Datenschutzerklärung
             </Link>
@@ -174,15 +174,15 @@ function CookieType({
     <div className="flex items-center gap-3">
       <span className="text-base">{icon}</span>
       <div className="flex-1 min-w-0">
-        <p className="text-slate-800 font-semibold text-xs">{label}</p>
-        <p className="text-slate-400 text-[11px] leading-snug">{description}</p>
+        <p className="text-slate-900 font-semibold text-xs">{label}</p>
+        <p className="text-slate-600 text-[11px] leading-snug">{description}</p>
       </div>
       {forced ? (
-        <span className="shrink-0 text-[10px] bg-sky-100 text-sky-700 font-semibold px-2 py-0.5 rounded-full">
+        <span className="shrink-0 text-[10px] bg-sky-100 text-sky-800 font-semibold px-2 py-0.5 rounded-full">
           Aktiv
         </span>
       ) : (
-        <span className="shrink-0 text-[10px] bg-slate-200 text-slate-500 font-semibold px-2 py-0.5 rounded-full">
+        <span className="shrink-0 text-[10px] bg-slate-200 text-slate-700 font-semibold px-2 py-0.5 rounded-full">
           Optional
         </span>
       )}
