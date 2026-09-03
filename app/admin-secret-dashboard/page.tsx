@@ -97,7 +97,7 @@ export default function AdminSecretDashboardPage() {
   const [authError, setAuthError] = useState<string>("");
 
   const [activeTab, setActiveTab] = useState<"company" | "advantages" | "services" | "faq" | "media" | "json">("company");
-  
+
   const [siteData, setSiteData] = useState<SiteConfigData | null>(null);
   const [servicesData, setServicesData] = useState<MainServiceItem[]>([]);
   const [faqData, setFaqData] = useState<FaqConfigItem[]>([]);
@@ -187,7 +187,7 @@ export default function AdminSecretDashboardPage() {
     return () => {
       active = false;
     };
-  }, [adminSecret, loadAllConfigs, loadMediaList]);
+  }, [adminSecret, loadAllConfigs, loadMediaList]); // <-- هنا المشكلة!
 
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -518,11 +518,10 @@ export default function AdminSecretDashboardPage() {
           <button
             onClick={handleSaveAll}
             disabled={isSaving || isLoading}
-            className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition-all flex items-center space-x-2 shadow-lg ${
-              hasUnsavedChanges
+            className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition-all flex items-center space-x-2 shadow-lg ${hasUnsavedChanges
                 ? "bg-sky-600 hover:bg-sky-500 text-white shadow-sky-600/30 animate-pulse"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-            }`}
+              }`}
           >
             {isSaving ? (
               <span>Saving changes...</span>
@@ -559,11 +558,10 @@ export default function AdminSecretDashboardPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as typeof activeTab)}
-              className={`px-4 py-2 text-xs font-semibold rounded-xl transition-all whitespace-nowrap flex items-center space-x-2 ${
-                activeTab === tab.id
+              className={`px-4 py-2 text-xs font-semibold rounded-xl transition-all whitespace-nowrap flex items-center space-x-2 ${activeTab === tab.id
                   ? "bg-sky-600 text-white shadow-md shadow-sky-600/20"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/50"
-              }`}
+                }`}
             >
               <span>{tab.label}</span>
             </button>
@@ -575,11 +573,10 @@ export default function AdminSecretDashboardPage() {
       <main className="flex-1 p-6 max-w-7xl w-full mx-auto space-y-6">
         {statusMessage && (
           <div
-            className={`p-4 rounded-xl text-sm flex items-center justify-between border shadow-lg ${
-              statusMessage.type === "success"
+            className={`p-4 rounded-xl text-sm flex items-center justify-between border shadow-lg ${statusMessage.type === "success"
                 ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400"
                 : "bg-red-500/10 border-red-500/20 text-red-400"
-            }`}
+              }`}
           >
             <span>{statusMessage.text}</span>
             <button onClick={() => setStatusMessage(null)} className="text-xs opacity-70 hover:opacity-100">
@@ -1296,8 +1293,8 @@ export default function AdminSecretDashboardPage() {
                       (rawFileSelected === "config/site.json"
                         ? JSON.stringify(siteData, null, 2)
                         : rawFileSelected === "config/services.json"
-                        ? JSON.stringify(servicesData, null, 2)
-                        : JSON.stringify(faqData, null, 2))
+                          ? JSON.stringify(servicesData, null, 2)
+                          : JSON.stringify(faqData, null, 2))
                     }
                     onChange={(e) => {
                       setRawJsonContent(e.target.value);
@@ -1315,7 +1312,7 @@ export default function AdminSecretDashboardPage() {
                     className="w-full bg-slate-950 font-mono text-xs text-sky-200 border border-slate-800 rounded-xl p-4 leading-relaxed focus:outline-none focus:border-sky-500"
                   />
                 </div>
-                
+
               </div>
             )}
           </>
