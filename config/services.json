@@ -204,6 +204,28 @@
           "Logistikzentren & Speditionen",
           "Büroparks & Industriekomplexe"
         ]
+      },
+      {
+        "id": "sub-1788443642554",
+        "slug": "sub-1788443642554",
+        "parentId": "winterdienst",
+        "title": "New Sub-Service",
+        "shortDesc": "Short description...sss",
+        "description": "Detailed sub-service description...",
+        "headline": "Certified Service",
+        "intro": "Sub-service intro...",
+        "tag": "Special",
+        "icon": "CheckCircle",
+        "image": "/images/service-2.jpeg",
+        "features": [
+          "Special Feature 1"
+        ],
+        "benefits": [
+          "Benefit 1"
+        ],
+        "areas": [
+          "Area 1"
+        ]
       }
     ]
   },

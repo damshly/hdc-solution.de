@@ -18,10 +18,22 @@
   "url": "https://hdc-dienstleistungen.de",
   "description": "Professionelle Gebäudedienstleistungen in Schweinfurt & Umgebung. Zuverlässig, gründlich und flexibel für Firmen, Büros & Privat.",
   "navLinks": [
-    { "name": "Start", "href": "/" },
-    { "name": "Leistungen", "href": "/leistungen" },
-    { "name": "Über HDC", "href": "/uber-hdc" },
-    { "name": "Kontakt", "href": "/kontakt" }
+    {
+      "name": "Start",
+      "href": "/"
+    },
+    {
+      "name": "Leistungen",
+      "href": "/leistungen"
+    },
+    {
+      "name": "Über HDC",
+      "href": "/uber-hdc"
+    },
+    {
+      "name": "Kontakt",
+      "href": "/kontakt"
+    }
   ],
   "services": [
     {

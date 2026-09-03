@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 type ConsentState = "accepted" | "rejected" | null;
@@ -8,6 +9,7 @@ type ConsentState = "accepted" | "rejected" | null;
 const COOKIE_CONSENT_KEY = "hdc_cookie_consent";
 
 export default function CookieBanner() {
+  const pathname = usePathname();
   const [consent, setConsent] = useState<ConsentState>(null);
   const [visible, setVisible] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
@@ -31,6 +33,10 @@ export default function CookieBanner() {
       setAnimateOut(false);
     }, 400);
   };
+
+  if (pathname?.startsWith("/admin-secret-dashboard")) {
+    return null;
+  }
 
   if (!visible || consent !== null) return null;
 

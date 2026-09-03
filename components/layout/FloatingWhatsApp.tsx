@@ -1,8 +1,14 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { SITE_INFO } from "@/constants/site";
 
 export default function FloatingWhatsApp() {
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/admin-secret-dashboard")) {
+    return null;
+  }
   const message = encodeURIComponent(
     "Hallo HDC Team, ich interessiere mich für Ihre Gebäudedienstleistungen und hätte gerne ein unverbindliches Angebot."
   );

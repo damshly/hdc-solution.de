@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { SITE_INFO } from "@/constants/site";
 import { TopBar } from "./TopBar";
@@ -9,6 +10,7 @@ import { MobileMenu } from "./MobileMenu";
 import Image from "next/image";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -19,6 +21,10 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (pathname?.startsWith("/admin-secret-dashboard")) {
+    return null;
+  }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">

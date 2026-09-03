@@ -133,7 +133,7 @@ export default function AdminSecretDashboardPage() {
 
       if (siteRes.status === 401 || servicesRes.status === 401 || faqRes.status === 401) {
         setIsAuthenticated(false);
-        setAuthError("Ungültiger Admin-Schlüssel. Zugriffsverweigerung.");
+        setAuthError("Invalid Admin Key. Access denied.");
         setIsLoading(false);
         return false;
       }
@@ -152,7 +152,7 @@ export default function AdminSecretDashboardPage() {
       sessionStorage.setItem("hdc_admin_secret", secret);
       return true;
     } catch {
-      setAuthError("Verbindung zum Server fehlgeschlagen.");
+      setAuthError("Connection to server failed.");
       setIsAuthenticated(false);
       return false;
     } finally {
@@ -249,12 +249,12 @@ export default function AdminSecretDashboardPage() {
 
       if (allSuccess) {
         setHasUnsavedChanges(false);
-        setStatusMessage({ type: "success", text: "Alle Änderungen wurden erfolgreich gespeichert!" });
+        setStatusMessage({ type: "success", text: "All changes saved successfully!" });
       } else {
-        setStatusMessage({ type: "error", text: "Einige Dateien konnten nicht gespeichert werden." });
+        setStatusMessage({ type: "error", text: "Failed to save some configuration files." });
       }
     } catch {
-      setStatusMessage({ type: "error", text: "Fehler beim Speichern der Daten." });
+      setStatusMessage({ type: "error", text: "Error saving data to server." });
     } finally {
       setIsSaving(false);
     }
@@ -279,13 +279,13 @@ export default function AdminSecretDashboardPage() {
 
       const data = await res.json();
       if (res.ok && data.success) {
-        setStatusMessage({ type: "success", text: `Datei ${data.filename} erfolgreich hochgeladen!` });
+        setStatusMessage({ type: "success", text: `File ${data.filename} uploaded successfully!` });
         await loadMediaList(adminSecret);
       } else {
-        setStatusMessage({ type: "error", text: data.error || "Fehler beim Hochladen der Datei." });
+        setStatusMessage({ type: "error", text: data.error || "Failed to upload file." });
       }
     } catch {
-      setStatusMessage({ type: "error", text: "Netzwerkfehler beim Hochladen." });
+      setStatusMessage({ type: "error", text: "Network error during file upload." });
     } finally {
       setIsUploading(false);
       e.target.value = "";
@@ -316,7 +316,7 @@ export default function AdminSecretDashboardPage() {
     if (!siteData) return;
     setSiteData({
       ...siteData,
-      advantages: [...siteData.advantages, { title: "Neuer Vorteil", desc: "Beschreibung...", icon: "Sparkles" }],
+      advantages: [...siteData.advantages, { title: "New Advantage", desc: "Description...", icon: "Sparkles" }],
     });
     markChanged();
   };
@@ -357,17 +357,17 @@ export default function AdminSecretDashboardPage() {
     const newService: MainServiceItem = {
       id: newId,
       slug: newId,
-      title: "Neue Hauptleistung",
-      shortDesc: "Kurzbeschreibung der neuen Leistung...",
-      description: "Ausführliche Beschreibung...",
-      headline: "Überschrift für die Leistungsseite",
-      intro: "Einleitungstext für Kunden...",
-      tag: "Neu",
+      title: "New Service",
+      shortDesc: "Short service teaser...",
+      description: "Full service description...",
+      headline: "Headline for Service Detail Page",
+      intro: "Introductory text...",
+      tag: "New",
       icon: "Sparkles",
       image: "/images/service-1.jpeg",
-      features: ["Erstes Feature"],
-      benefits: ["Erster Vorteil"],
-      areas: ["Einsatzbereich 1"],
+      features: ["First Feature"],
+      benefits: ["First Benefit"],
+      areas: ["Target Area 1"],
       subServices: [],
     };
     setServicesData([...servicesData, newService]);
@@ -376,7 +376,7 @@ export default function AdminSecretDashboardPage() {
   };
 
   const deleteMainService = (sIndex: number) => {
-    if (!confirm("Möchten Sie diese Hauptleistung wirklich löschen?")) return;
+    if (!confirm("Are you sure you want to delete this main service?")) return;
     const updated = servicesData.filter((_, i) => i !== sIndex);
     setServicesData(updated);
     markChanged();
@@ -389,17 +389,17 @@ export default function AdminSecretDashboardPage() {
       id: subId,
       slug: subId,
       parentId: parent.id,
-      title: "Neue Unterleistung",
-      shortDesc: "Kurzbeschreibung...",
-      description: "Ausführliche Beschreibung der Spezialleistung...",
-      headline: "Zertifizierte Leistung",
-      intro: "Einleitung der Unterleistung...",
-      tag: "Spezial",
+      title: "New Sub-Service",
+      shortDesc: "Short description...",
+      description: "Detailed sub-service description...",
+      headline: "Certified Service",
+      intro: "Sub-service intro...",
+      tag: "Special",
       icon: "CheckCircle",
       image: parent.image || "/images/service-1.jpeg",
-      features: ["Spezialfunktion 1"],
-      benefits: ["Vorteil 1"],
-      areas: ["Bereich 1"],
+      features: ["Special Feature 1"],
+      benefits: ["Benefit 1"],
+      areas: ["Area 1"],
     };
     const updated = [...servicesData];
     updated[sIndex].subServices = [...(updated[sIndex].subServices || []), newSub];
@@ -431,7 +431,7 @@ export default function AdminSecretDashboardPage() {
   };
 
   const addFaq = () => {
-    setFaqData([...faqData, { question: "Neue Frage?", answer: "Antwort eingeben..." }]);
+    setFaqData([...faqData, { question: "New Question?", answer: "Enter answer..." }]);
     markChanged();
   };
 
@@ -456,7 +456,7 @@ export default function AdminSecretDashboardPage() {
               </svg>
             </div>
             <h1 className="text-2xl font-bold text-white tracking-tight">HDC Admin Dashboard</h1>
-            <p className="text-sm text-slate-400 mt-2">Bitte geben Sie Ihren Admin-Schlüssel ein</p>
+            <p className="text-sm text-slate-400 mt-2">Please enter your admin secret key</p>
           </div>
 
           <form onSubmit={handleLoginSubmit} className="space-y-5">
@@ -468,7 +468,7 @@ export default function AdminSecretDashboardPage() {
                 type="password"
                 value={adminSecret}
                 onChange={(e) => setAdminSecret(e.target.value)}
-                placeholder="Schlüssel eingeben..."
+                placeholder="Enter secret key..."
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-colors"
                 required
               />
@@ -484,7 +484,7 @@ export default function AdminSecretDashboardPage() {
               type="submit"
               className="w-full bg-sky-600 hover:bg-sky-500 text-white font-medium py-3 rounded-xl transition-colors shadow-lg shadow-sky-600/20"
             >
-              Anmelden
+              Log In
             </button>
           </form>
         </div>
@@ -505,11 +505,11 @@ export default function AdminSecretDashboardPage() {
               <h1 className="text-base font-bold text-white leading-tight">Admin Dashboard</h1>
               {hasUnsavedChanges && (
                 <span className="bg-amber-500/20 text-amber-300 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-amber-500/30">
-                  Ungespeicherte Änderungen
+                  Unsaved Changes
                 </span>
               )}
             </div>
-            <p className="text-xs text-slate-400">Content Management für Nicht-Techniker</p>
+            <p className="text-xs text-slate-400">Content Management System</p>
           </div>
         </div>
 
@@ -525,13 +525,13 @@ export default function AdminSecretDashboardPage() {
             }`}
           >
             {isSaving ? (
-              <span>Speichere Änderungen...</span>
+              <span>Saving changes...</span>
             ) : (
               <>
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Änderungen speichern</span>
+                <span>Save Changes</span>
               </>
             )}
           </button>
@@ -540,7 +540,7 @@ export default function AdminSecretDashboardPage() {
             onClick={handleLogout}
             className="text-xs text-slate-400 hover:text-red-400 px-3 py-2 border border-slate-800 hover:border-red-500/30 rounded-xl transition-colors"
           >
-            Abmelden
+            Log Out
           </button>
         </div>
       </header>
@@ -549,12 +549,12 @@ export default function AdminSecretDashboardPage() {
       <div className="bg-slate-900 border-b border-slate-800 px-6 py-2">
         <div className="max-w-7xl mx-auto flex items-center space-x-2 overflow-x-auto">
           {[
-            { id: "company", label: "Unternehmensdaten", icon: "Building" },
-            { id: "advantages", label: "Vorteile & Features", icon: "Star" },
-            { id: "services", label: "Leistungen & Services", icon: "Layers" },
-            { id: "faq", label: "FAQ / Fragen", icon: "HelpCircle" },
-            { id: "media", label: "Medienbibliothek", icon: "Image" },
-            { id: "json", label: "Erweitert (Raw JSON)", icon: "Code" },
+            { id: "company", label: "Company Info" },
+            { id: "advantages", label: "Advantages & Features" },
+            { id: "services", label: "Services & Sub-Services" },
+            { id: "faq", label: "FAQ" },
+            { id: "media", label: "Media Library" },
+            { id: "json", label: "Advanced (Raw JSON)" },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -583,13 +583,13 @@ export default function AdminSecretDashboardPage() {
           >
             <span>{statusMessage.text}</span>
             <button onClick={() => setStatusMessage(null)} className="text-xs opacity-70 hover:opacity-100">
-              Schließen
+              Close
             </button>
           </div>
         )}
 
         {isLoading ? (
-          <div className="py-20 text-center text-slate-500 text-sm">Lade Daten aus Konfigurations-Dateien...</div>
+          <div className="py-20 text-center text-slate-500 text-sm">Loading configuration files...</div>
         ) : (
           <>
             {/* TAB 1: Company Metadata */}
@@ -597,14 +597,14 @@ export default function AdminSecretDashboardPage() {
               <div className="space-y-6">
                 <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-6">
                   <h2 className="text-base font-bold text-white border-b border-slate-800 pb-3 flex items-center justify-between">
-                    <span>Unternehmensdaten & Kontaktinformationen</span>
+                    <span>Company Details & Contact Info</span>
                     <span className="text-xs font-mono text-slate-500">config/site.json</span>
                   </h2>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Firmenname
+                        Company Name
                       </label>
                       <input
                         type="text"
@@ -616,7 +616,7 @@ export default function AdminSecretDashboardPage() {
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Stadt / Hauptort
+                        City / Primary Location
                       </label>
                       <input
                         type="text"
@@ -628,7 +628,7 @@ export default function AdminSecretDashboardPage() {
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Einsatzregion
+                        Service Region
                       </label>
                       <input
                         type="text"
@@ -640,7 +640,7 @@ export default function AdminSecretDashboardPage() {
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        E-Mail Adresse
+                        Email Address
                       </label>
                       <input
                         type="email"
@@ -652,7 +652,7 @@ export default function AdminSecretDashboardPage() {
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Telefonnummer (für Anrufe)
+                        Phone Number (Calls)
                       </label>
                       <input
                         type="text"
@@ -664,7 +664,7 @@ export default function AdminSecretDashboardPage() {
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Telefonnummer (Formatiert)
+                        Formatted Phone Number
                       </label>
                       <input
                         type="text"
@@ -676,7 +676,7 @@ export default function AdminSecretDashboardPage() {
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        WhatsApp Nummer (ohne Sonderzeichen)
+                        WhatsApp Number (Digits Only)
                       </label>
                       <input
                         type="text"
@@ -688,7 +688,7 @@ export default function AdminSecretDashboardPage() {
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Arbeitszeiten / Notdienst
+                        Working Hours / Emergency Service
                       </label>
                       <input
                         type="text"
@@ -703,13 +703,13 @@ export default function AdminSecretDashboardPage() {
                 {/* Impressum & Legal */}
                 <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-6">
                   <h2 className="text-base font-bold text-white border-b border-slate-800 pb-3">
-                    Rechtliche Angaben & Impressum
+                    Legal & Impressum Information
                   </h2>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Inhaber / Geschäftsinhaber
+                        Business Owner
                       </label>
                       <input
                         type="text"
@@ -721,7 +721,7 @@ export default function AdminSecretDashboardPage() {
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Straße & Hausnummer
+                        Street & House Number
                       </label>
                       <input
                         type="text"
@@ -733,7 +733,7 @@ export default function AdminSecretDashboardPage() {
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Postleitzahl (PLZ)
+                        Postal Code (ZIP)
                       </label>
                       <input
                         type="text"
@@ -745,7 +745,7 @@ export default function AdminSecretDashboardPage() {
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Umsatzsteuer-ID / Steuerhinweis
+                        Tax ID / Tax Notice
                       </label>
                       <input
                         type="text"
@@ -758,7 +758,7 @@ export default function AdminSecretDashboardPage() {
 
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                      Meta Description (SEO Vorschau)
+                      Meta Description (SEO Preview)
                     </label>
                     <textarea
                       value={siteData.description || ""}
@@ -776,14 +776,14 @@ export default function AdminSecretDashboardPage() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h2 className="text-lg font-bold text-white">Vorteile & Qualitätsmerkmale</h2>
-                    <p className="text-xs text-slate-400">Verwalten Sie die Kernvorteile auf der Startseite</p>
+                    <h2 className="text-lg font-bold text-white">Advantages & Key Features</h2>
+                    <p className="text-xs text-slate-400">Manage primary value propositions displayed on the homepage</p>
                   </div>
                   <button
                     onClick={addAdvantage}
                     className="bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors flex items-center space-x-2"
                   >
-                    <span>+ Vorteil hinzufügen</span>
+                    <span>+ Add Advantage</span>
                   </button>
                 </div>
 
@@ -792,19 +792,19 @@ export default function AdminSecretDashboardPage() {
                     <div key={idx} className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4 relative group">
                       <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                         <span className="text-xs font-bold text-sky-400 uppercase tracking-wider font-mono">
-                          Vorteil #{idx + 1}
+                          Advantage #{idx + 1}
                         </span>
                         <button
                           onClick={() => deleteAdvantage(idx)}
                           className="text-xs text-slate-500 hover:text-red-400 transition-colors"
                         >
-                          Löschen
+                          Delete
                         </button>
                       </div>
 
                       <div className="space-y-3">
                         <div>
-                          <label className="block text-[11px] font-semibold text-slate-400 mb-1">Titel</label>
+                          <label className="block text-[11px] font-semibold text-slate-400 mb-1">Title</label>
                           <input
                             type="text"
                             value={adv.title}
@@ -820,12 +820,12 @@ export default function AdminSecretDashboardPage() {
                             value={adv.icon}
                             onChange={(e) => updateAdvantage(idx, "icon", e.target.value)}
                             className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs font-mono text-sky-300 focus:outline-none focus:border-sky-500"
-                            placeholder="z.B. ShieldCheck, Clock, Sparkles"
+                            placeholder="e.g. ShieldCheck, Clock, Sparkles"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-[11px] font-semibold text-slate-400 mb-1">Beschreibung</label>
+                          <label className="block text-[11px] font-semibold text-slate-400 mb-1">Description</label>
                           <textarea
                             value={adv.desc}
                             onChange={(e) => updateAdvantage(idx, "desc", e.target.value)}
@@ -845,14 +845,14 @@ export default function AdminSecretDashboardPage() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h2 className="text-lg font-bold text-white">Leistungen & Spezialdienste</h2>
-                    <p className="text-xs text-slate-400">Verwalten Sie Hauptleistungen und verschachtelte Unterleistungen</p>
+                    <h2 className="text-lg font-bold text-white">Services & Sub-Services</h2>
+                    <p className="text-xs text-slate-400">Manage main services and nested sub-services</p>
                   </div>
                   <button
                     onClick={addMainService}
                     className="bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors flex items-center space-x-2"
                   >
-                    <span>+ Neue Hauptleistung hinzufügen</span>
+                    <span>+ Add Main Service</span>
                   </button>
                 </div>
 
@@ -871,14 +871,14 @@ export default function AdminSecretDashboardPage() {
                               {sIndex + 1}
                             </span>
                             <div>
-                              <h3 className="text-base font-bold text-white">{service.title || "Unbenannte Leistung"}</h3>
+                              <h3 className="text-base font-bold text-white">{service.title || "Untitled Service"}</h3>
                               <span className="text-xs text-slate-400 font-mono">/leistungen/{service.slug}</span>
                             </div>
                           </div>
 
                           <div className="flex items-center space-x-3">
                             <span className="text-xs bg-slate-900 border border-slate-700 px-3 py-1 rounded-full text-slate-300">
-                              {service.subServices?.length || 0} Unterleistungen
+                              {service.subServices?.length || 0} Sub-Services
                             </span>
                             <button
                               type="button"
@@ -888,7 +888,7 @@ export default function AdminSecretDashboardPage() {
                               }}
                               className="text-xs text-red-400 hover:text-red-300 px-3 py-1 border border-red-500/20 rounded-lg hover:bg-red-500/10 transition-colors"
                             >
-                              Löschen
+                              Delete
                             </button>
                           </div>
                         </div>
@@ -899,7 +899,7 @@ export default function AdminSecretDashboardPage() {
                             {/* Main Service Fields */}
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                               <div>
-                                <label className="block text-xs font-semibold text-slate-400 mb-1">Titel</label>
+                                <label className="block text-xs font-semibold text-slate-400 mb-1">Title</label>
                                 <input
                                   type="text"
                                   value={service.title}
@@ -909,7 +909,7 @@ export default function AdminSecretDashboardPage() {
                               </div>
 
                               <div>
-                                <label className="block text-xs font-semibold text-slate-400 mb-1">Slug (URL-Pfad)</label>
+                                <label className="block text-xs font-semibold text-slate-400 mb-1">Slug (URL Path)</label>
                                 <input
                                   type="text"
                                   value={service.slug}
@@ -941,7 +941,7 @@ export default function AdminSecretDashboardPage() {
                               </div>
 
                               <div>
-                                <label className="block text-xs font-semibold text-slate-400 mb-1">Bild URL (/images/...)</label>
+                                <label className="block text-xs font-semibold text-slate-400 mb-1">Image URL (/images/...)</label>
                                 <input
                                   type="text"
                                   value={service.image || ""}
@@ -953,7 +953,7 @@ export default function AdminSecretDashboardPage() {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <div>
-                                <label className="block text-xs font-semibold text-slate-400 mb-1">Haupt-Überschrift (Headline)</label>
+                                <label className="block text-xs font-semibold text-slate-400 mb-1">Main Headline</label>
                                 <input
                                   type="text"
                                   value={service.headline || ""}
@@ -963,7 +963,7 @@ export default function AdminSecretDashboardPage() {
                               </div>
 
                               <div>
-                                <label className="block text-xs font-semibold text-slate-400 mb-1">Kurzbeschreibung (Teaser)</label>
+                                <label className="block text-xs font-semibold text-slate-400 mb-1">Short Description (Teaser)</label>
                                 <input
                                   type="text"
                                   value={service.shortDesc || ""}
@@ -974,7 +974,7 @@ export default function AdminSecretDashboardPage() {
                             </div>
 
                             <div>
-                              <label className="block text-xs font-semibold text-slate-400 mb-1">Einleitungstext (Intro)</label>
+                              <label className="block text-xs font-semibold text-slate-400 mb-1">Intro Text</label>
                               <textarea
                                 value={service.intro || ""}
                                 onChange={(e) => updateService(sIndex, "intro", e.target.value)}
@@ -985,7 +985,7 @@ export default function AdminSecretDashboardPage() {
 
                             {/* Features List Manager */}
                             <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 space-y-3">
-                              <h4 className="text-xs font-bold text-sky-400 uppercase tracking-wider">Leistungsumfang & Features</h4>
+                              <h4 className="text-xs font-bold text-sky-400 uppercase tracking-wider">Service Features & Scope</h4>
                               <div className="flex flex-wrap gap-2">
                                 {(service.features || []).map((feat, fIdx) => (
                                   <span key={fIdx} className="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg text-xs text-slate-200 flex items-center space-x-2">
@@ -1003,7 +1003,7 @@ export default function AdminSecretDashboardPage() {
                                 <input
                                   type="text"
                                   id={`new-feature-${sIndex}`}
-                                  placeholder="Neues Feature eingeben..."
+                                  placeholder="Type new feature..."
                                   className="flex-1 bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-500"
                                   onKeyDown={(e) => {
                                     if (e.key === "Enter") {
@@ -1024,7 +1024,7 @@ export default function AdminSecretDashboardPage() {
                                   }}
                                   className="bg-slate-800 hover:bg-slate-700 text-xs font-medium px-3 py-2 rounded-lg text-slate-200"
                                 >
-                                  Hinzufügen
+                                  Add
                                 </button>
                               </div>
                             </div>
@@ -1033,14 +1033,14 @@ export default function AdminSecretDashboardPage() {
                             <div className="border-t border-slate-800 pt-6 space-y-4">
                               <div className="flex items-center justify-between">
                                 <div>
-                                  <h4 className="text-sm font-bold text-white">Unterleistungen ({service.subServices?.length || 0})</h4>
-                                  <p className="text-xs text-slate-400">Spezialisierte Unterdienste für {service.title}</p>
+                                  <h4 className="text-sm font-bold text-white">Sub-Services ({service.subServices?.length || 0})</h4>
+                                  <p className="text-xs text-slate-400">Specialized sub-services for {service.title}</p>
                                 </div>
                                 <button
                                   onClick={() => addSubService(sIndex)}
                                   className="bg-sky-600/20 hover:bg-sky-600/30 text-sky-400 text-xs font-semibold px-3 py-2 rounded-lg border border-sky-500/30 transition-colors"
                                 >
-                                  + Unterleistung hinzufügen
+                                  + Add Sub-Service
                                 </button>
                               </div>
 
@@ -1049,19 +1049,19 @@ export default function AdminSecretDashboardPage() {
                                   <div key={sub.id || subIndex} className="bg-slate-950 border border-slate-800 rounded-xl p-4 space-y-4">
                                     <div className="flex items-center justify-between border-b border-slate-800/80 pb-2">
                                       <span className="text-xs font-bold text-slate-300 font-mono">
-                                        Unterleistung #{subIndex + 1}: {sub.title}
+                                        Sub-Service #{subIndex + 1}: {sub.title}
                                       </span>
                                       <button
                                         onClick={() => deleteSubService(sIndex, subIndex)}
                                         className="text-xs text-slate-500 hover:text-red-400"
                                       >
-                                        Unterleistung löschen
+                                        Delete Sub-Service
                                       </button>
                                     </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                                       <div>
-                                        <label className="block text-[11px] font-semibold text-slate-400 mb-1">Titel</label>
+                                        <label className="block text-[11px] font-semibold text-slate-400 mb-1">Title</label>
                                         <input
                                           type="text"
                                           value={sub.title}
@@ -1081,7 +1081,7 @@ export default function AdminSecretDashboardPage() {
                                       </div>
 
                                       <div>
-                                        <label className="block text-[11px] font-semibold text-slate-400 mb-1">Bild URL</label>
+                                        <label className="block text-[11px] font-semibold text-slate-400 mb-1">Image URL</label>
                                         <input
                                           type="text"
                                           value={sub.image}
@@ -1092,7 +1092,7 @@ export default function AdminSecretDashboardPage() {
                                     </div>
 
                                     <div>
-                                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">Kurzbeschreibung</label>
+                                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">Short Description</label>
                                       <textarea
                                         value={sub.shortDesc}
                                         onChange={(e) => updateSubService(sIndex, subIndex, "shortDesc", e.target.value)}
@@ -1118,14 +1118,14 @@ export default function AdminSecretDashboardPage() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h2 className="text-lg font-bold text-white">Häufig gestellte Fragen (FAQ)</h2>
-                    <p className="text-xs text-slate-400">Verwalten Sie Fragen und Antworten für Ihre Kunden</p>
+                    <h2 className="text-lg font-bold text-white">Frequently Asked Questions (FAQ)</h2>
+                    <p className="text-xs text-slate-400">Manage questions and answers for website visitors</p>
                   </div>
                   <button
                     onClick={addFaq}
                     className="bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors flex items-center space-x-2"
                   >
-                    <span>+ Neue Frage hinzufügen</span>
+                    <span>+ Add FAQ Item</span>
                   </button>
                 </div>
 
@@ -1134,19 +1134,19 @@ export default function AdminSecretDashboardPage() {
                     <div key={fIdx} className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4">
                       <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                         <span className="text-xs font-bold text-sky-400 uppercase tracking-wider font-mono">
-                          Frage #{fIdx + 1}
+                          Question #{fIdx + 1}
                         </span>
                         <button
                           onClick={() => deleteFaq(fIdx)}
                           className="text-xs text-slate-500 hover:text-red-400 transition-colors"
                         >
-                          Löschen
+                          Delete
                         </button>
                       </div>
 
                       <div className="space-y-3">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">Frage</label>
+                          <label className="block text-xs font-semibold text-slate-300 mb-1">Question</label>
                           <input
                             type="text"
                             value={faq.question}
@@ -1156,7 +1156,7 @@ export default function AdminSecretDashboardPage() {
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">Antwort</label>
+                          <label className="block text-xs font-semibold text-slate-300 mb-1">Answer</label>
                           <textarea
                             value={faq.answer}
                             onChange={(e) => updateFaq(fIdx, "answer", e.target.value)}
@@ -1191,10 +1191,10 @@ export default function AdminSecretDashboardPage() {
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-white">
-                        {isUploading ? "Datei wird hochgeladen..." : "Bild oder Datei hier ablegen oder klicken"}
+                        {isUploading ? "Uploading file..." : "Drop image or file here or click to browse"}
                       </p>
                       <p className="text-xs text-slate-400 mt-1">
-                        Unterstützt: JPG, PNG, WEBP, SVG, GIF, PDF (Max. 10MB)
+                        Supported formats: JPG, PNG, WEBP, SVG, GIF, PDF (Max 10MB)
                       </p>
                     </div>
                   </div>
@@ -1203,10 +1203,10 @@ export default function AdminSecretDashboardPage() {
                 {/* Media Search & Grid */}
                 <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <h2 className="text-sm font-bold text-white">Hochgeladene Medien ({filteredMedia.length})</h2>
+                    <h2 className="text-sm font-bold text-white">Uploaded Media ({filteredMedia.length})</h2>
                     <input
                       type="text"
-                      placeholder="Medien durchsuchen..."
+                      placeholder="Search media..."
                       value={mediaSearch}
                       onChange={(e) => setMediaSearch(e.target.value)}
                       className="bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500"
@@ -1215,7 +1215,7 @@ export default function AdminSecretDashboardPage() {
 
                   {filteredMedia.length === 0 ? (
                     <div className="py-12 text-center text-slate-500 text-xs">
-                      Keine Medien gefunden in public/uploads.
+                      No media found in public/uploads.
                     </div>
                   ) : (
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -1250,9 +1250,9 @@ export default function AdminSecretDashboardPage() {
                               className="w-full bg-slate-800 hover:bg-sky-600 text-white text-[11px] font-medium py-1.5 rounded-lg transition-colors flex items-center justify-center space-x-1"
                             >
                               {copiedUrl === item.url ? (
-                                <span className="text-emerald-400">Kopiert!</span>
+                                <span className="text-emerald-400">Copied!</span>
                               ) : (
-                                <span>URL Kopieren</span>
+                                <span>Copy URL</span>
                               )}
                             </button>
                           </div>
@@ -1270,8 +1270,8 @@ export default function AdminSecretDashboardPage() {
                 <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h2 className="text-sm font-bold text-white font-mono">Erweiterter RAW JSON Editor</h2>
-                      <p className="text-xs text-slate-400">Für Entwickler / Fortgeschrittene</p>
+                      <h2 className="text-sm font-bold text-white font-mono">Advanced RAW JSON Editor</h2>
+                      <p className="text-xs text-slate-400">For developers and advanced users</p>
                     </div>
 
                     <select

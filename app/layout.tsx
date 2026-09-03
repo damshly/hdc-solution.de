@@ -75,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="de" dir="ltr" suppressHydrationWarning>
       <body className="bg-surface-subtle text-slate-800 antialiased font-sans">
-        {/* <Navbar /> */}
+        <Navbar />
         {children}
         <Footer />
         <FloatingWhatsApp />
