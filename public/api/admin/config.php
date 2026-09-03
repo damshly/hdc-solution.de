@@ -10,7 +10,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 $expectedToken = getenv('ADMIN_SECRET') ?: 'hdc-admin-secret-key-2026';
-$token = $_SERVER['HTTP_X_ADMIN_TOKEN'] ?? '';
+
+// Robust token extraction compatible with all Apache/PHP server configurations
+$token = '';
+if (isset($_SERVER['HTTP_X_ADMIN_TOKEN'])) {
+    $token = $_SERVER['HTTP_X_ADMIN_TOKEN'];
+} elseif (function_exists('apache_request_headers')) {
+    $allHeaders = apache_request_headers();
+    foreach ($allHeaders as $key => $value) {
+        if (strtolower($key) === 'x-admin-token') {
+            $token = $value;
+            break;
+        }
+    }
+}
 
 if ($token !== $expectedToken) {
     http_response_code(401);
@@ -28,7 +41,6 @@ $allowedConfigFiles = [
 $rootDir = realpath(__DIR__ . '/../../..');
 
 function sanitizeAndValidatePath($relativePath, $rootDir, $allowedConfigFiles) {
-    // Basic path traversal prevention
     $relativePath = str_replace(['..', '\\'], ['', '/'], $relativePath);
     $relativePath = preg_replace('#/+#', '/', $relativePath);
     
@@ -143,7 +155,6 @@ if ($method === 'POST' || $method === 'PUT') {
     
     $fullPath = $validation['fullPath'];
     
-    // Ensure directory exists
     $dir = dirname($fullPath);
     if (!is_dir($dir)) {
         mkdir($dir, 0755, true);
