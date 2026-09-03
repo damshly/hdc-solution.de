@@ -5,7 +5,7 @@
 Options -Indexes
 
 # Protect .env, config.php, composer, and hidden files
-<FilesMatch "^\.env|config\.php|composer\.(json|lock)">
+<FilesMatch "(^\.env|composer\.(json|lock))">
     <IfModule mod_authz_core.c>
         Require all denied
     </IfModule>
