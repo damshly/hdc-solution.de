@@ -126,9 +126,9 @@ export default function AdminSecretDashboardPage() {
     setStatusMessage(null);
     try {
       const [siteRes, servicesRes, faqRes] = await Promise.all([
-        fetch("/api/admin/files?file=config/site.json", { headers: { "x-admin-secret": secret } }),
-        fetch("/api/admin/files?file=config/services.json", { headers: { "x-admin-secret": secret } }),
-        fetch("/api/admin/files?file=config/faq.json", { headers: { "x-admin-secret": secret } }),
+        fetch("/api/admin/config.php?file=config/site.json", { headers: { "x-admin-token": secret } }),
+        fetch("/api/admin/config.php?file=config/services.json", { headers: { "x-admin-token": secret } }),
+        fetch("/api/admin/config.php?file=config/faq.json", { headers: { "x-admin-token": secret } }),
       ]);
 
       if (siteRes.status === 401 || servicesRes.status === 401 || faqRes.status === 401) {
@@ -162,8 +162,8 @@ export default function AdminSecretDashboardPage() {
 
   const loadMediaList = useCallback(async (secret: string) => {
     try {
-      const res = await fetch("/api/admin/upload", {
-        headers: { "x-admin-secret": secret },
+      const res = await fetch("/api/admin/upload.php", {
+        headers: { "x-admin-token": secret },
       });
       const data = await res.json();
       if (res.ok && data.success) {
@@ -216,9 +216,9 @@ export default function AdminSecretDashboardPage() {
 
       if (siteData) {
         promises.push(
-          fetch("/api/admin/files", {
+          fetch("/api/admin/config.php", {
             method: "POST",
-            headers: { "Content-Type": "application/json", "x-admin-secret": adminSecret },
+            headers: { "Content-Type": "application/json", "x-admin-token": adminSecret },
             body: JSON.stringify({ filename: "config/site.json", content: siteData }),
           })
         );
@@ -226,9 +226,9 @@ export default function AdminSecretDashboardPage() {
 
       if (servicesData) {
         promises.push(
-          fetch("/api/admin/files", {
+          fetch("/api/admin/config.php", {
             method: "POST",
-            headers: { "Content-Type": "application/json", "x-admin-secret": adminSecret },
+            headers: { "Content-Type": "application/json", "x-admin-token": adminSecret },
             body: JSON.stringify({ filename: "config/services.json", content: servicesData }),
           })
         );
@@ -236,9 +236,9 @@ export default function AdminSecretDashboardPage() {
 
       if (faqData) {
         promises.push(
-          fetch("/api/admin/files", {
+          fetch("/api/admin/config.php", {
             method: "POST",
-            headers: { "Content-Type": "application/json", "x-admin-secret": adminSecret },
+            headers: { "Content-Type": "application/json", "x-admin-token": adminSecret },
             body: JSON.stringify({ filename: "config/faq.json", content: faqData }),
           })
         );
@@ -271,9 +271,9 @@ export default function AdminSecretDashboardPage() {
     formData.append("file", file);
 
     try {
-      const res = await fetch("/api/admin/upload", {
+      const res = await fetch("/api/admin/upload.php", {
         method: "POST",
-        headers: { "x-admin-secret": adminSecret },
+        headers: { "x-admin-token": adminSecret },
         body: formData,
       });
 
@@ -1315,6 +1315,7 @@ export default function AdminSecretDashboardPage() {
                     className="w-full bg-slate-950 font-mono text-xs text-sky-200 border border-slate-800 rounded-xl p-4 leading-relaxed focus:outline-none focus:border-sky-500"
                   />
                 </div>
+                
               </div>
             )}
           </>

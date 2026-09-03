@@ -3,7 +3,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  trailingSlash: true, // يحسّن التوافق مع استضافات الـ Static مثل Nginx أو Cloudflare Pages
+  trailingSlash: true,
+  output: "export",
 };
 
 module.exports = nextConfig;
