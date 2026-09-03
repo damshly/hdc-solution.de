@@ -1,0 +1,292 @@
+[
+  {
+    "id": "gebaeudereinigung",
+    "slug": "gebaeudereinigung",
+    "title": "Gebäudereinigung",
+    "shortDesc": "Gründliche und zuverlässige Reinigung für Büro-, Praxis- und Wohnräume.",
+    "description": "Wir bieten Ihnen eine gründliche und zuverlässige Reinigung Ihrer Räumlichkeiten – für einen stets gepflegten Eindruck.",
+    "headline": "Individuelle Reinigungslösungen für Ihr Gebäude",
+    "intro": "Wir bieten professionelle Gebäudereinigung für Firmen- und Privatkunden. Unser Service umfasst Unterhaltsreinigung, Grundreinigung und Sonderreinigung – individuell angepasst an Ihre Wünsche und betrieblichen Abläufe.",
+    "tag": "Top Service",
+    "icon": "Sparkles",
+    "image": "/images/service-1.jpeg",
+    "features": [
+      "Unterhaltsreinigung (Büros, Praxen, Kanzleien)",
+      "Grundreinigung & Bauendreinigung",
+      "Glas- & Fensterreinigung (streifenfrei)",
+      "Treppenhausreinigung & Objektpflege",
+      "Hygienereinigung & Desinfektion"
+    ],
+    "benefits": [
+      "Feste Reinigungsintervalle nach Wunsch (täglich, wöchentlich, monatlich)",
+      "Einsatz moderner & umweltschonender Reinigungsmittel",
+      "Geschultes, festangestelltes und haftpflichtversichertes Personal",
+      "Höchste Diskretion und Zuverlässigkeit"
+    ],
+    "areas": [
+      "Büros & Verwaltungsgebäude",
+      "Arztpraxen & Gesundheitszentren",
+      "Hotels & Ferienwohnungen",
+      "Treppenhäuser & Wohnanlagen",
+      "Kindergärten, Schulen & Bildungseinrichtungen",
+      "Fitnessstudios & Sportstätten",
+      "Einkaufszentren & Verkaufsflächen",
+      "Autohäuser & Ausstellungsräume",
+      "Produktions- & Lagerhallen",
+      "Baustellen & Neubauten"
+    ],
+    "subServices": [
+      {
+        "id": "praxen-kliniken",
+        "slug": "praxen-kliniken",
+        "parentId": "gebaeudereinigung",
+        "title": "Arztpraxen & Medizintechnik-Reinigung",
+        "shortDesc": "Spezialisierte Hygienereinigung und Desinfektion für Praxen, Kliniken und empfindliche medizinische Geräte.",
+        "description": "Höchste Sauberkeit und Keimfreiheit für medizinische Einrichtungen. Unser geschultes Fachpersonal reinigt sensible Behandlungsräume und pflegt hochwertige Medizintechnik nach strengen Hygienevorschriften.",
+        "headline": "Zertifizierte Hygienereinigung & Pflege medizinischer Geräte",
+        "intro": "In Arztpraxen, ZMVZ und Kliniken ist Sauberkeit eine Frage der Patientensicherheit. Wir bieten maßgeschneiderte Hygienekonzepte nach RKI-Richtlinien, desinfizieren Behandlungsstühle, Arbeitsflächen und empfindliche medizinische Geräte fachgerecht.",
+        "tag": "Höchste Hygiene",
+        "icon": "Stethoscope",
+        "image": "/images/gallery-4.jpeg",
+        "features": [
+          "Flächendesinfektion & Aufbereitung von Behandlungseinheiten",
+          "Schonende & fachgerechte Reinigung empfindlicher Medizintechnik",
+          "Reinigung von Wartezimmern, Empfangsbereichen & OP-Vorräumen",
+          "Desinfizierende Fußboden- und Sanitärbereichsreinigung",
+          "Verwendung VAH-/RKI-gelisteter Desinfektionsmittel",
+          "Lückenlose Dokumentation der Hygienepläne"
+        ],
+        "benefits": [
+          "Einhaltung höchster Infektionsschutz- und RKI-Standardvorgaben",
+          "Schutz Ihrer hochwertigen medizinischen Geräte und Apparaturen",
+          "Schulung des Personals für sterile & sensible Praxisbereiche",
+          "Flexible Reinigungszeiten außerhalb der Sprechzeiten (früh/spät)"
+        ],
+        "areas": [
+          "Arztpraxen aller Fachrichtungen (Zahnärzte, Chirurgie, Allgemeinmedizin)",
+          "Zahntechnische Laboratorien & Medizintechnik-Zentren",
+          "Physiotherapie- und Rehapraxen",
+          "Radiologische Praxen & Diagnostikzentren",
+          "Klinikbereiche & Ambulanzen"
+        ],
+        "standards": [
+          "RKI-Konformität (Robert Koch Institut Standards)",
+          "VAH-zertifizierte Flächendesinfektionsmittel",
+          "Farbcodiertes Tuch-System zur Vermeidung von Kreuzkontaminationen",
+          "Regelmäßige Hygiene-Audits & Schulungsnachweise"
+        ]
+      },
+      {
+        "id": "wohnungen",
+        "slug": "wohnungen",
+        "parentId": "gebaeudereinigung",
+        "title": "Wohnungs- & Apartmentreinigung",
+        "shortDesc": "Zuverlässige Reinigung für Privathaushalte, Mietwohnungen und Ferienunterkünfte.",
+        "description": "Professionelle Wohnungsreinigung für Privathaushalte, Umzüge und Vermieter. Wir sorgen für glänzende Böden, saubere Küchen und frische Sanitärräume.",
+        "headline": "Perfekte Sauberkeit für Ihr Zuhause & Ferienimmobilien",
+        "intro": "Egal ob regelmäßige Haushaltsreinigung, gründliche Endreinigung vor dem Auszug oder Betreuung von Ferienwohnungen – wir entlasten Sie zuverlässig im Alltag.",
+        "tag": "Privat & Vermietung",
+        "icon": "Home",
+        "image": "/images/service-1.jpeg",
+        "features": [
+          "Unterhaltsreinigung von Wohnräumen, Schlafräumen & Bädern",
+          "Gründliche Küchenreinigung inklusive Fettbeseitigung",
+          "Fensterreinigung mit Rahmen- & Silikonpflege",
+          "Umzugsreinigung mit Abnahmegarantie",
+          "Wäsche- & Bettenwechsel-Service für Ferienwohnungen"
+        ],
+        "benefits": [
+          "Mehr Freizeit und Lebensqualität für Sie",
+          "Feste Ansprechpartner & vertrauenswürdiges Personal",
+          "Transparente Festpreise ohne versteckte Nebenkosten",
+          "Steuerlich absetzbar als haushaltsnahe Dienstleistung"
+        ],
+        "areas": [
+          "Privatwohnungen & Appartements",
+          "Ferienwohnungen & Airbnb-Unterkünfte",
+          "Seniorenresidenzen & betreutes Wohnen",
+          "Mietwohnungen vor Mieterwechsel"
+        ]
+      },
+      {
+        "id": "villen",
+        "slug": "villen",
+        "parentId": "gebaeudereinigung",
+        "title": "Villen- & Anwesenreinigung",
+        "shortDesc": "Exklusive Reinigung und Werterhalt für großflächige Häuser, Villen und Premium-Immobilien.",
+        "description": "Diskrete und erstklassige Pflege für anspruchsvolle Wohnkonzepte. Wir behandeln hochwertige Materialien wie Naturstein, Parkett und Designelemente mit größter Sorgfalt.",
+        "headline": "Exklusive Pflege & Diskretion für Ihr Anwesen",
+        "intro": "Villen und hochwertige Anwesen stellen besondere Anforderungen an Materialkenntnis und Pflege. Unser geschultes Team pflegt Edelhölzer, Natursteine und großflächige Glasfronten fachgerecht.",
+        "tag": "Premium Service",
+        "icon": "Crown",
+        "image": "/images/gallery-2.jpeg",
+        "features": [
+          "Schonende Pflege hochwertiger Naturstein- & Parkettböden",
+          "Reinigung großflächiger Glasfronten, Wintergärten & Deckenleuchten",
+          "Pflege von Spa-Bereichen, Poolhäusern & Wellnessbereichen",
+          "Grund- & Tiefenreinigung repräsentativer Empfangshallen",
+          "Diskreter VIP-Service mit festem Reinigungsteam"
+        ],
+        "benefits": [
+          "Werterhalt edler Materialien und Einbauten",
+          "Höchste Diskretion & Sicherheitsstandards",
+          "Individuell abgestimmtes Pflegekonzept nach Ihren Wünschen",
+          "Regelmäßige Qualitätskontrollen durch Objektleiter"
+        ],
+        "areas": [
+          "Private Villen & Landhäuser",
+          "Penthouse-Wohnungen & Loft-Apartments",
+          "Repräsentative Anwesen & historische Objekte",
+          "Poolhäuser & Private Spa-Bereiche"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "winterdienst",
+    "slug": "winterdienst",
+    "title": "24/7 Winterdienst",
+    "shortDesc": "24/7 Schneeräumung und Streudienst für schnee- und eisfreie Wege.",
+    "description": "Kommen Sie sicher durch den Winter mit unserem 24/7 Winterdienst. Wir sorgen für schneefreie und sichere Wege.",
+    "headline": "Zuverlässiger 24/7 Winterdienst für maximale Sicherheit",
+    "intro": "Zuverlässiger 24/7 Winterdienst für private und gewerbliche Kunden – damit Wege, Parkplätze und Zufahrten auch bei starkem Schneefall und Glatteis sicher begehbar und befahrbar bleiben.",
+    "tag": "24/7 Verfügbar",
+    "icon": "Snowflake",
+    "image": "/images/service-2.jpeg",
+    "features": [
+      "24/7 Schneeräumung von Gehwegen, Straßen & Parkplätzen",
+      "Vorbeugender und akuter Streudienst gegen Glätte",
+      "Eisbeseitigung an Treppen und Eingangsbereichen",
+      "Entfernung von Streugut nach der Wintersaison",
+      "Räumung von Betriebs- und Werksgeländen"
+    ],
+    "benefits": [
+      "24/7 Einsatzbereitschaft & Wetter-Monitoring",
+      "Einhaltung der gesetzlichen Räum- und Streupflichten",
+      "Professioneller Maschinen- & Fuhrpark",
+      "Haftungsübernahme und Versicherungsschutz",
+      "Transparente Pauschal- oder Einsatzabrechnung"
+    ],
+    "areas": [
+      "Gewerbliche Parkplätze & Kundenparkflächen",
+      "Öffentliche & private Gehwege",
+      "Wohnanlagen & Eigentümergemeinschaften",
+      "Einfahrten, Rampen & Ladezonen",
+      "Treppenanlagen & Hauseingänge",
+      "Industrie- & Gewerbeparks"
+    ],
+    "subServices": [
+      {
+        "id": "gewerbe-parkplaetze",
+        "slug": "gewerbe-parkplaetze",
+        "parentId": "winterdienst",
+        "title": "Gewerbe- & Parkplatzräumung",
+        "shortDesc": "Großflächige Schneeräumung und Streudienst für Kundenparkplätze und Firmenareale.",
+        "description": "Damit Ihr Betrieb auch bei Eis und Schnee sicher erreichbar bleibt. Wir räumen Kundenparkplätze, Betriebshöfe und Zufahrten mit modernem Räumgerät.",
+        "headline": "Sicherer Betriebsablauf auch bei starkem Schneefall",
+        "intro": "Für Unternehmen ist die Einhaltung der Verkehrssicherungspflicht unerlässlich. Unser Winterdienst übernimmt das Monitoring der Wetterlage und rückt rechtzeitig vor Arbeitsbeginn aus.",
+        "tag": "Gewerblich",
+        "icon": "Truck",
+        "image": "/images/service-2.jpeg",
+        "features": [
+          "Maschinelle Schneeräumung großer Parkplatz- & Hofflächen",
+          "Vorbeugender Streudienst mit umweltgerechten Auftaumitteln",
+          "Freiräumung von Ladezonen & Lkw-Zufahrten",
+          "Kontrollgänge und Dokumentation der Räumeinsätze"
+        ],
+        "benefits": [
+          "Sicherung des laufenden Betriebs- und Kundenverkehrs",
+          "Rechtssichere Einhaltung der gesetzlichen Räumpflicht",
+          "Vollständiger Haftungsschutz im Schadensfall"
+        ],
+        "areas": [
+          "Supermärkte & Einkaufszentren",
+          "Logistikzentren & Speditionen",
+          "Büroparks & Industriekomplexe"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gartenpflege",
+    "slug": "gartenpflege",
+    "title": "Garten- & Außenpflege",
+    "shortDesc": "Professionelle Pflege von Grünflächen, Hecken und Außenbereichen.",
+    "description": "Wir kümmern uns um die Pflege Ihrer Grünanlagen und Außenbereiche für ein repräsentatives Gesamtbild.",
+    "headline": "Fachgerechte Pflege für Grünanlagen und Außenbereiche",
+    "intro": "Eine gepflegte Außenanlage ist die Visitenkarte Ihrer Immobilie. Wir bieten privaten und gewerblichen Kunden eine umfassende und fachgerechte Pflege für einen dauerhaft repräsentativen Eindruck.",
+    "tag": "Außenbereich",
+    "icon": "Trees",
+    "image": "/images/service-3.jpeg",
+    "features": [
+      "Rasenpflege (Mähen, Düngen, Vertikutieren, Kantenschnitt)",
+      "Hecken-, Strauch- und Baumschnitt",
+      "Fachgerechte Unkrautbeseitigung auf Beeten & Pflasterflächen",
+      "Laubbeseitigung & Entsorgung von Grünschnitt",
+      "Reinigung von Hof- und Verkehrsflächen"
+    ],
+    "benefits": [
+      "Regelmäßige Pflege nach individuellem Wartungsplan",
+      "Flexible Pflegeintervalle nach Bedarf",
+      "Fachgerechte und umweltbewusste Entsorgung aller Grünabfälle",
+      "Modernes Profi-Gerät für leises und effizientes Arbeiten"
+    ],
+    "areas": [
+      "Gewerbeobjekte & Firmenareale",
+      "Wohnanlagen & Mietshäuser",
+      "Privatgärten & Grundstücke",
+      "Öffentliche & kommunale Außenflächen"
+    ],
+    "details": [
+      {
+        "title": "Gartenpflege",
+        "items": [
+          "Rasenmähen und Rasenkanten stutzen",
+          "Fachgerechte Unkrautbeseitigung & Pflege",
+          "Laubsammlung und Entsorgung der Grünabfälle",
+          "Formschnitt und Pflege von Hecken und Sträuchern"
+        ]
+      },
+      {
+        "title": "Außenanlagenpflege",
+        "items": [
+          "Reinigung und Pflege von Gehwegen und Zufahrten",
+          "Kehren von Höfen, Parkplätzen und Werksgeländen",
+          "Unkrautentfernung aus Fugen und Pflasterungen",
+          "Reinigung von Rinnen, Abläufen und Lichtschächten"
+        ]
+      }
+    ],
+    "subServices": [
+      {
+        "id": "rasen-heckenpflege",
+        "slug": "rasen-heckenpflege",
+        "parentId": "gartenpflege",
+        "title": "Rasen- & Heckenschnitt",
+        "shortDesc": "Regelmäßiges Mähen, Kantenschneiden und Formschnitt für Hecken und Gehölze.",
+        "description": "Grüne Oasen in Bestform. Wir übernehmen den regelmäßigen Rasenschnitt, Vertikutierung und den professionellen Formschnitt Ihrer Hecken.",
+        "headline": "Professioneller Heckenschnitt & saubere Rasenkanten",
+        "intro": "Ein dichter, grüner Rasen und gepflegte Hecken verleihen jedem Grundstück Struktur. Wir kümmern uns um alle Schnittarbeiten inklusive Entsorgung des Grünschnitts.",
+        "tag": "Grünpflege",
+        "icon": "Scissors",
+        "image": "/images/service-3.jpeg",
+        "features": [
+          "Fachgerechter Hecken- & Strauchschnitt",
+          "Rasenmähen mit Mulch- oder Fangsystem",
+          "Vertikutieren & Nachsaat im Frühjahr",
+          "Umweltfreundliche Abfuhr & Verwertung aller Abfälle"
+        ],
+        "benefits": [
+          "Gesundes und dichtes Pflanzenwachstum",
+          "Saubere Grundstücksgrenzen und Wege",
+          "Arbeits- und Zeitersparnis für Eigentümer"
+        ],
+        "areas": [
+          "Privatgärten",
+          "Wohnkomplexe & Hausverwaltungen",
+          "Firmenaußengelände"
+        ]
+      }
+    ]
+  }
+]

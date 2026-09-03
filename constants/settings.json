@@ -1,0 +1,10 @@
+{
+  "siteTitle": "HDC Gebäudedienstleistungen",
+  "adminDashboardTitle": "HDC Admin Dashboard",
+  "allowedUploadTypes": ["image/jpeg", "image/png", "image/webp", "image/svg+xml", "image/gif", "application/pdf"],
+  "maxUploadSizeMB": 10,
+  "theme": {
+    "primaryColor": "#0284c7",
+    "darkBg": "#0f172a"
+  }
+}
