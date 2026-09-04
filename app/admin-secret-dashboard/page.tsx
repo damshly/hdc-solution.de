@@ -187,7 +187,7 @@ export default function AdminSecretDashboardPage() {
     return () => {
       active = false;
     };
-  }, [adminSecret, loadAllConfigs, loadMediaList]); // <-- هنا المشكلة!
+  }, [adminSecret, loadAllConfigs, loadMediaList]);
 
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
